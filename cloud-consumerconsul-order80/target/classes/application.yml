@@ -1,10 +1,10 @@
 server:
-  port: 80
+  port: 8001
 
 # 服务别名---zookeeper注册中心名称
 spring:
   application:
-    name: consul-consumer-payment
+    name: client-1
   cloud:
     consul:
       host: 123.57.101.34

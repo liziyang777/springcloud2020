@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 public class OrderConsulController {
 
 
-    private static final String INVOKE_URL = "http://consul-provider-payment";
+    private static final String INVOKE_URL = "http://consul-consumer-payment";
 
     @Resource
     private RestTemplate restTemplate;
