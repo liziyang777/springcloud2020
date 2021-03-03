@@ -4,6 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+/**
+ * @EnableDiscoveryClient 可写可不写
+ */
 @SpringBootApplication
 @EnableDiscoveryClient
 public class PaymentMain8006 {
