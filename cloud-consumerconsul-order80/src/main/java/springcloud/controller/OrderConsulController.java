@@ -29,7 +29,7 @@ public class OrderConsulController {
      */
     @GetMapping("query")
     public String serviceUrl() {
-        List<ServiceInstance> list = discoveryClient.getInstances("client-2");
+        List<ServiceInstance> list = discoveryClient.getInstances("consul-provider-payment");
         if (list != null && list.size() > 0) {
             return String.valueOf(list.get(0).getUri());
         }
