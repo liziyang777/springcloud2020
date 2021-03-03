@@ -1,26 +1,39 @@
 package springcloud.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.Resource;
+import java.util.List;
 
+/**
+ * 方法二：使用 DiscoveryClient 查询服务
+ * <p>
+ * 官网解释：You can also use the org.springframework.cloud.client.discovery.
+ * DiscoveryClient which provides a simple API for discovery clients that is not specific to Netflix
+ */
 @RestController
 @Slf4j
 public class OrderConsulController {
 
 
-    private static final String INVOKE_URL = "http://consul-consumer-payment";
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
-    @Resource
-    private RestTemplate restTemplate;
-
-    @GetMapping(value = "/consumer/payment/consul")
-    public String paymentInfo(){
-        String result = restTemplate.getForObject(INVOKE_URL + "/payment/consul", String.class);
-        return result;
+    /**
+     * 查询服务名下的实例
+     * @return
+     */
+    @GetMapping("query")
+    public String serviceUrl() {
+        List<ServiceInstance> list = discoveryClient.getInstances("client-2");
+        if (list != null && list.size() > 0) {
+            return String.valueOf(list.get(0).getUri());
+        }
+        return null;
     }
 
 }
