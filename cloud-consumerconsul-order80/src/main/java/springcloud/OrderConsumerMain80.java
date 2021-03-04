@@ -25,8 +25,13 @@ public class OrderConsumerMain80 {
 
     @RequestMapping("/hello")
     public String home() {
-        String result = restTemplate.getForObject(INVOKE_URL + "/payment/consul", String.class);
-        return result;
+//        String result = restTemplate.getForObject(INVOKE_URL + "/payment/consul", String.class);
+        return "{\n" +
+                "\"status\": \"UP\",\n" +
+                "\"application\": {\n" +
+                "\"status\": \"UP\"\n" +
+                "}\n" +
+                "}";
     }
 
 
