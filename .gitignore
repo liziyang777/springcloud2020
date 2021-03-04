@@ -202,3 +202,4 @@ gen.sh
 /eureka/target/
 /redis/target/
 /elasticsearch/src/main/resources/es/day1资料/
+/cloud-consumerconsul-order80/target/
