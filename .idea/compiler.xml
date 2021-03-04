@@ -57,7 +57,7 @@
       <module name="cloud-gateway-gateway9527" target="1.8" />
       <module name="cloud-provider-hystrix-payment8001" target="1.8" />
       <module name="cloud-provider-payment8001" target="1.8" />
-      <module name="cloud-provider-payment8002" target="1.5" />
+      <module name="cloud-provider-payment8002" target="1.8" />
       <module name="cloud-provider-payment8004" target="1.8" />
       <module name="cloud-providerconsul-payment8006" target="1.8" />
       <module name="cloud-stream-rabbitmq-consumer8802" target="1.8" />
